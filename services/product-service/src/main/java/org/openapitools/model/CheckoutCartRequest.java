@@ -1,0 +1,97 @@
+package org.openapitools.model;
+
+import java.net.URI;
+import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import org.springframework.lang.Nullable;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.time.OffsetDateTime;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.*;
+import io.swagger.v3.oas.annotations.media.Schema;
+
+
+import java.util.*;
+import jakarta.annotation.Generated;
+
+/**
+ * CheckoutCartRequest
+ */
+
+@JsonTypeName("checkoutCart_request")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-03-14T11:50:51.562192-07:00[America/Los_Angeles]", comments = "Generator version: 7.20.0")
+public class CheckoutCartRequest {
+
+  private String creditCardNumber;
+
+  public CheckoutCartRequest() {
+    super();
+  }
+
+  /**
+   * Constructor with only required parameters
+   */
+  public CheckoutCartRequest(String creditCardNumber) {
+    this.creditCardNumber = creditCardNumber;
+  }
+
+  public CheckoutCartRequest creditCardNumber(String creditCardNumber) {
+    this.creditCardNumber = creditCardNumber;
+    return this;
+  }
+
+  /**
+   * Credit card number as string as groups of 4 digits with dashes (minus sign)
+   * @return creditCardNumber
+   */
+  @NotNull 
+  @Schema(name = "credit_card_number", example = "1234-5678-1234-5678", description = "Credit card number as string as groups of 4 digits with dashes (minus sign)", requiredMode = Schema.RequiredMode.REQUIRED)
+  @JsonProperty("credit_card_number")
+  public String getCreditCardNumber() {
+    return creditCardNumber;
+  }
+
+  public void setCreditCardNumber(String creditCardNumber) {
+    this.creditCardNumber = creditCardNumber;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    CheckoutCartRequest checkoutCartRequest = (CheckoutCartRequest) o;
+    return Objects.equals(this.creditCardNumber, checkoutCartRequest.creditCardNumber);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(creditCardNumber);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class CheckoutCartRequest {\n");
+    sb.append("    creditCardNumber: ").append(toIndentedString(creditCardNumber)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(@Nullable Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+
